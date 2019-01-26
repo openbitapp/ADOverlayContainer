@@ -48,7 +48,7 @@ class ShortcutsLikeViewController: UIViewController {
     private func setUp(for traitCollection: UITraitCollection) {
         guard sizeClass != traitCollection.horizontalSizeClass else { return }
         sizeClass = traitCollection.horizontalSizeClass
-        children.first.flatMap { removeChild($0) }
+        childViewControllers.first.flatMap { removeChild($0) }
         switch sizeClass {
         case .compact:
             let overlayController = OverlayContainerViewController()

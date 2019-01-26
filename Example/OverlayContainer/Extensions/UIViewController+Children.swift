@@ -11,15 +11,15 @@ import UIKit
 extension UIViewController {
     func addChild(_ child: UIViewController, in containerView: UIView) {
         guard containerView.isDescendant(of: view) else { return }
-        addChild(child)
+        addChildViewController(child)
         containerView.addSubview(child.view)
         child.view.pinToSuperview()
-        child.didMove(toParent: self)
+        child.didMove(toParentViewController: self)
     }
 
     func removeChild(_ child: UIViewController) {
-        child.willMove(toParent: nil)
+        child.willMove(toParentViewController: nil)
         child.view.removeFromSuperview()
-        child.removeFromParent()
+        child.removeFromParentViewController()
     }
 }
