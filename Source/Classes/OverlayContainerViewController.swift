@@ -67,15 +67,15 @@ public class OverlayContainerViewController: UIViewController {
 
     private lazy var configuration: OverlayContainerViewControllerConfiguration = self.makeConfiguration()
 
+    private var previousSize: CGSize = .zero
+    private var translationController: HeightContrainstOverlayTranslationController?
+    private var translationDrivers: [OverlayTranslationDriver] = []
+
     private var needsOverlayContainerHeightUpdate = true {
         didSet {
             view.setNeedsLayout()
         }
     }
-
-    private var previousSize: CGSize = .zero
-    private var translationController: HeightContrainstOverlayTranslationController?
-    private var translationDrivers: [OverlayTranslationDriver] = []
 
     private var overlayContainerConstraintsAreActive: Bool {
         return (overlayContainerViewStyleConstraint?.isActive ?? false)
@@ -115,7 +115,6 @@ public class OverlayContainerViewController: UIViewController {
     public override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         guard needsOverlayContainerHeightUpdate || previousSize != view.bounds.size else { return }
-        self.previousSize = view.bounds.size
         needsOverlayContainerHeightUpdate = false
         updateOverlayConstraints(forNew: view.bounds.size)
     }
@@ -137,8 +136,15 @@ public class OverlayContainerViewController: UIViewController {
     /// - parameter animated: Defines either the transition should be animated or not.
     ///
     public func moveOverlay(toNotchAt index: Int, animated: Bool) {
+        // (gz) 2019-03-05 We set up the view if the user calls `moveOverlay(toNotchAt:animated:)`
+        // before any layout pass has been performed (call to `viewWillLayoutSubviews`).
         if !overlayContainerConstraintsAreActive {
             view.layoutIfNeeded()
+        }
+        // (gz) 2019-03-05 We reload the number of notches before moving overlay if the notches are invalided
+        // to avoid wrong value inside `ConcreteOverlayContainerContextTransitioning`.
+        if needsOverlayContainerHeightUpdate {
+            configuration.reloadNotchHeights()
         }
         translationController?.moveOverlay(toNotchAt: index, velocity: .zero, animated: animated)
     }
@@ -178,7 +184,10 @@ public class OverlayContainerViewController: UIViewController {
         guard let controller = translationController else {
             return
         }
-        configuration.reloadNotchHeights()
+        if size != previousSize {
+            configuration.reloadNotchHeights()
+            previousSize = size
+        }
         switch style {
         case .flexibleHeight:
             overlayContainerViewStyleConstraint?.constant = 0

@@ -20,6 +20,8 @@ public protocol OverlayContainerTransitionCoordinatorContext {
     var notchIndexes: Range<Int> { get }
     /// Returns the height of the specified notch.
     func height(forNotchAt index: Int) -> CGFloat
+    /// A Boolean value indicating whether the transition is explicitly animated.
+    var isAnimated: Bool { get }
 }
 
 /// A protocol that provides support for animations associated with a overlay translation end.

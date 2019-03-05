@@ -77,6 +77,7 @@ class HeightContrainstOverlayTranslationController: OverlayTranslationController
             height = max(configuration.minimumNotchHeight, min(configuration.maximumNotchHeight, translation))
         }
         dragOverlay(toHeight: height)
+        delegate?.translationController(self, didDragOverlayToHeight: height)
     }
 
     func endOverlayTranslation(withVelocity velocity: CGPoint) {
@@ -101,14 +102,14 @@ class HeightContrainstOverlayTranslationController: OverlayTranslationController
         let height = translationHeight
         translationEndNotchIndex = index
         dragOverlay(toHeight: translationEndNotchHeight)
-        guard animated else { return }
         let context = ConcreteOverlayContainerContextTransitioning(
             overlayViewController: overlay,
             overlayTranslationHeight: height,
             velocity: velocity,
             targetNotchIndex: translationEndNotchIndex,
             targetNotchHeight: translationEndNotchHeight,
-            notchHeightByIndex: configuration.notchHeightByIndex
+            notchHeightByIndex: configuration.notchHeightByIndex,
+            isAnimated: animated
         )
         let animationController = configuration.animationController(forOverlay: overlay)
         let animator = animationController.interruptibleAnimator(using: context)
@@ -121,7 +122,13 @@ class HeightContrainstOverlayTranslationController: OverlayTranslationController
             willReachNotchAt: translationEndNotchIndex,
             transitionCoordinator: coordinator
         )
-        animator.startAnimation()
+        if animated {
+            animator.startAnimation()
+        } else {
+            UIView.performWithoutAnimation {
+                animator.startAnimation()
+            }
+        }
     }
 
     // MARK: - Private
@@ -136,6 +143,5 @@ class HeightContrainstOverlayTranslationController: OverlayTranslationController
     private func dragOverlay(toHeight height: CGFloat) {
         guard translationHeightConstraint.constant != height else { return }
         translationHeightConstraint.constant = height
-        delegate?.translationController(self, didDragOverlayToHeight: height)
     }
 }
