@@ -9,7 +9,7 @@ import UIKit
 
 class OverlayTranslationGestureRecognizer: UIPanGestureRecognizer {
 
-    weak var drivingScrollView: UIScrollView?
+    weak var drivingScrollEntity: ScrollEntity?
 
     var translationOffset: CGFloat = 0
 
@@ -30,7 +30,7 @@ class OverlayTranslationGestureRecognizer: UIPanGestureRecognizer {
     }
 
     override func shouldRequireFailure(of otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        guard let gestures = drivingScrollView?.gestureRecognizers else {
+        guard let gestures = drivingScrollEntity?.gestureRecognizers else {
             return super.shouldBeRequiredToFail(by: otherGestureRecognizer)
         }
         if gestures.contains(otherGestureRecognizer) {

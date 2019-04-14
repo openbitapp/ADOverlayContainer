@@ -9,15 +9,15 @@ import UIKit
 
 extension UIScrollView {
 
-    var scrollsUp: Bool {
+    public var scrollsUp: Bool {
         return panGestureRecognizer.yDirection == .up
     }
 
-    var isContentOriginInBounds: Bool {
+    public var isContentOriginInBounds: Bool {
         return contentOffset.y <= -contentInset.top
     }
 
-    func scrollToTop() {
+    public func scrollToTop() {
         contentOffset.y = -contentInset.top
     }
 }

@@ -7,6 +7,10 @@
 
 import UIKit
 
+#if canImport(AsyncDisplayKit)
+import AsyncDisplayKit
+#endif
+
 /// A `OverlayContainerViewController` is a container view controller that manages one or more
 /// child view controllers in an overlay interface. It defines an area where its children can be dragged up and down
 /// hidding or revealing the content underneath it. The container does not contain this underlying content.
@@ -49,6 +53,15 @@ public class OverlayContainerViewController: UIViewController {
 
     /// The scroll view managing the overlay translation.
     public weak var drivingScrollView: UIScrollView? {
+        didSet {
+            guard drivingScrollView !== oldValue else { return }
+            guard isViewLoaded else { return }
+            loadTranslationDrivers()
+        }
+    }
+
+    /// The scroll view managing the overlay translation.
+    public weak var drivingScrollEntity: ScrollEntity? {
         didSet {
             guard drivingScrollView !== oldValue else { return }
             guard isViewLoaded else { return }
@@ -229,14 +242,44 @@ public class OverlayContainerViewController: UIViewController {
             panGestureRecognizer: overlayPanGesture
         )
         drivers.append(panGestureDriver)
-        let scrollView = drivingScrollView ?? configuration.scrollView(drivingOverlay: overlayController)
-        if let scrollView = scrollView {
-            overlayPanGesture.drivingScrollView = scrollView
-            let driver = ScrollViewOverlayTranslationDriver(
-                translationController: translationController,
-                scrollView: scrollView
-            )
-            drivers.append(driver)
+//        let scrollView = drivingScrollView ?? configuration.scrollView(drivingOverlay: overlayController)
+//        if let scrollView = scrollView {
+//            overlayPanGesture.drivingScrollView = scrollView
+//            let driver = ScrollViewOverlayTranslationDriver(
+//                translationController: translationController,
+//                scrollView: scrollView
+//            )
+//            drivers.append(driver)
+//        }
+
+        let scrollEntity = drivingScrollEntity ?? configuration.scrollEntity(drivingOverlay: overlayController)
+        if let scrollEntity = scrollEntity {
+            overlayPanGesture.drivingScrollEntity = scrollEntity
+            switch scrollEntity {
+            case is UIScrollView:
+                guard let scrollView = scrollEntity as? UIScrollView
+                    else { break }
+                let driver = ScrollViewOverlayTranslationDriver(
+                    translationController: translationController,
+                    scrollView: scrollView
+                )
+                drivers.append(driver)
+                break
+            #if canImport(AsyncDisplayKit)
+            case is ASTableNode:
+                guard let tableNode = scrollEntity as? ASTableNode
+                    else { break }
+                let driver = TableNodeOverlayTranslationDriver(
+                    translationController: translationController,
+                    tableNode: tableNode
+                )
+                drivers.append(driver)
+                break
+            #endif
+            default:
+                break
+            }
+
         }
         translationDrivers = drivers
     }

@@ -12,7 +12,7 @@ import UIKit
 class ModalNavigationViewController: UIViewController, SearchViewControllerDelegate {
 
     enum OverlayNotch: Int, CaseIterable {
-        case minimum, maximum
+        case closed, minimum, maximum
     }
 
     private let overlayController = OverlayContainerViewController()
@@ -27,6 +27,8 @@ class ModalNavigationViewController: UIViewController, SearchViewControllerDeleg
         overlayController.viewControllers = [MapsViewController(), overlayNavigationController]
         pushSearchViewController()
         addChild(overlayController, in: view)
+
+        overlayController.moveOverlay(toNotchAt: OverlayNotch.minimum.rawValue, animated: true)
     }
 
     // MARK: - SearchViewControllerDelegate
@@ -75,6 +77,8 @@ extension ModalNavigationViewController: OverlayContainerViewControllerDelegate 
             return availableSpace * 3 / 4
         case .minimum:
             return availableSpace * 1 / 4
+        case .closed:
+            return 0
         }
     }
 

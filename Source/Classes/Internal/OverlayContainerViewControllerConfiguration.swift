@@ -87,6 +87,11 @@ class OverlayContainerViewControllerConfiguration {
         return delegate?.overlayContainerViewController(containerController, scrollViewDrivingOverlay: controller)
     }
 
+    func scrollEntity(drivingOverlay controller: UIViewController) -> ScrollEntity? {
+        guard let containerController = overlayContainerViewController else { return nil }
+        return delegate?.overlayContainerViewController(containerController, scrollEntityDrivingOverlay: controller)
+    }
+
     func shouldStartDraggingOverlay(_ viewController: UIViewController,
                                     at point: CGPoint,
                                     in coordinateSpace: UICoordinateSpace) -> Bool {

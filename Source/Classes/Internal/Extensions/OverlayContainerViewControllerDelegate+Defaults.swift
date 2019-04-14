@@ -19,6 +19,11 @@ public extension OverlayContainerViewControllerDelegate {
     }
 
     func overlayContainerViewController(_ containerViewController: OverlayContainerViewController,
+                                        scrollEntityDrivingOverlay overlayViewController: UIViewController) -> ScrollEntity? {
+        return nil
+    }
+
+    func overlayContainerViewController(_ containerViewController: OverlayContainerViewController,
                                         shouldStartDraggingOverlay overlayViewController: UIViewController,
                                         at point: CGPoint,
                                         in coordinateSpace: UICoordinateSpace) -> Bool {

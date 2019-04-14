@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = MapsLikeViewController()
+//        window?.rootViewController = ModalNavigationViewController()
         window?.makeKeyAndVisible()
         return true
     }

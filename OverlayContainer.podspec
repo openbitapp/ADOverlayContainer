@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OverlayContainer'
-  s.version          = '2.0.0'
+  s.version          = '2.1.0'
   s.summary          = 'OverlayContainer is a UI library which makes it easier to develop overlay based interfaces.'
 
   s.swift_version    = '4.2'
@@ -26,5 +26,14 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/applidium/ADOverlayContainer.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
-  s.source_files = 'Source/Classes/**/*'
+
+  s.subspec 'Core' do |core|
+    core.source_files = 'Source/Classes/**/*'
+  end
+
+  s.subspec 'Texture' do |texture|
+    texture.dependency 'Texture/Core'
+  end
+
+  s.default_subspecs = 'Core'
 end

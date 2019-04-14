@@ -46,6 +46,19 @@ public protocol OverlayContainerViewControllerDelegate: class {
     func overlayContainerViewController(_ containerViewController: OverlayContainerViewController,
                                         scrollViewDrivingOverlay overlayViewController: UIViewController) -> UIScrollView?
 
+    /// Asks the delegate for a scroll entity driving the current top overlay view controller translation.
+    ///
+    /// The container view controller can coordinate the scrolling of a scroll view
+    /// to the child view controllers translation. The children will be moved up & down as the user scrolls.
+    /// The content offset of the scroll entity will be adjusted accordingly.
+    ///
+    /// - parameter containerViewController: The container requesting this information.
+    /// - parameter overlayViewController: The current top overlay view controller.
+    ///
+    /// - returns: A scroll entity to use as a translation driver.
+    func overlayContainerViewController(_ containerViewController: OverlayContainerViewController,
+                                        scrollEntityDrivingOverlay overlayViewController: UIViewController) -> ScrollEntity?
+
     /// Asks the delegate if the container should drag its children when the user starts a pan gesture at the specified location.
     ///
     /// The container view controller detects pan gestures on its own view.

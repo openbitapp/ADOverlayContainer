@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A65A60D1D7D4AF2B6A3FB1F /* Pods_OverlayContainer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84281E3E7B4853CEBFAC680F /* Pods_OverlayContainer_Tests.framework */; };
+		7DA5CA11E55B8A903863B8B6 /* Pods_OverlayContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1E77B0706694881F67F242 /* Pods_OverlayContainer.framework */; };
 		E701831B2226A98700433BB6 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70183192226A98700433BB6 /* Quick.framework */; };
 		E701831C2226A98700433BB6 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E701831A2226A98700433BB6 /* Nimble.framework */; };
 		E70183202226ABDE00433BB6 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E701831A2226A98700433BB6 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,6 +51,11 @@
 		E78486542201EA9400DE64C3 /* OverlayNotchHeightTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78485C42201E66500DE64C3 /* OverlayNotchHeightTest.swift */; };
 		E791BAA4225F284800124D27 /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791BAA3225F284800124D27 /* GroundView.swift */; };
 		E791BAAD225F771400124D27 /* CGFloat+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791BAAC225F771400124D27 /* CGFloat+Round.swift */; };
+		F158E759226360C9007910FD /* OverlayTableNodeDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E758226360C9007910FD /* OverlayTableNodeDelegateProxy.swift */; };
+		F158E75B226364A6007910FD /* ASTableNode+ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E75A226364A6007910FD /* ASTableNode+ScrollEntity.swift */; };
+		F158E75D226364CF007910FD /* ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E75C226364CF007910FD /* ScrollEntity.swift */; };
+		F158E75F22636AE7007910FD /* UIScrollView+ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E75E22636AE7007910FD /* UIScrollView+ScrollEntity.swift */; };
+		F158E76122636F49007910FD /* TableNodeOverlayTranslationDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E76022636F49007910FD /* TableNodeOverlayTranslationDriver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +83,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1AC1E83ED7562588D61C40C4 /* Pods-OverlayContainer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverlayContainer_Tests.release.xcconfig"; path = "Target Support Files/Pods-OverlayContainer_Tests/Pods-OverlayContainer_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		36EDAD19737221455B6C7632 /* Pods-OverlayContainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverlayContainer.debug.xcconfig"; path = "Target Support Files/Pods-OverlayContainer/Pods-OverlayContainer.debug.xcconfig"; sourceTree = "<group>"; };
+		84281E3E7B4853CEBFAC680F /* Pods_OverlayContainer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OverlayContainer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C1E77B0706694881F67F242 /* Pods_OverlayContainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OverlayContainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91CB8A738A08DB8248F335FD /* Pods-OverlayContainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverlayContainer.release.xcconfig"; path = "Target Support Files/Pods-OverlayContainer/Pods-OverlayContainer.release.xcconfig"; sourceTree = "<group>"; };
+		9548F4FD30212A00D11E579E /* Pods-OverlayContainer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverlayContainer_Tests.debug.xcconfig"; path = "Target Support Files/Pods-OverlayContainer_Tests/Pods-OverlayContainer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E70183192226A98700433BB6 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		E701831A2226A98700433BB6 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		E784855C2201E4F700DE64C3 /* OverlayContainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OverlayContainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +132,11 @@
 		E78486472201EA7400DE64C3 /* OverlayContainer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OverlayContainer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E791BAA3225F284800124D27 /* GroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundView.swift; sourceTree = "<group>"; };
 		E791BAAC225F771400124D27 /* CGFloat+Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Round.swift"; sourceTree = "<group>"; };
+		F158E758226360C9007910FD /* OverlayTableNodeDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTableNodeDelegateProxy.swift; sourceTree = "<group>"; };
+		F158E75A226364A6007910FD /* ASTableNode+ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASTableNode+ScrollEntity.swift"; sourceTree = "<group>"; };
+		F158E75C226364CF007910FD /* ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollEntity.swift; sourceTree = "<group>"; };
+		F158E75E22636AE7007910FD /* UIScrollView+ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ScrollEntity.swift"; sourceTree = "<group>"; };
+		F158E76022636F49007910FD /* TableNodeOverlayTranslationDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableNodeOverlayTranslationDriver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA5CA11E55B8A903863B8B6 /* Pods_OverlayContainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,17 +155,31 @@
 				E701831B2226A98700433BB6 /* Quick.framework in Frameworks */,
 				E701831C2226A98700433BB6 /* Nimble.framework in Frameworks */,
 				E784864C2201EA7500DE64C3 /* OverlayContainer.framework in Frameworks */,
+				0A65A60D1D7D4AF2B6A3FB1F /* Pods_OverlayContainer_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5DCE1DC56CABEA8837E5E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36EDAD19737221455B6C7632 /* Pods-OverlayContainer.debug.xcconfig */,
+				91CB8A738A08DB8248F335FD /* Pods-OverlayContainer.release.xcconfig */,
+				9548F4FD30212A00D11E579E /* Pods-OverlayContainer_Tests.debug.xcconfig */,
+				1AC1E83ED7562588D61C40C4 /* Pods-OverlayContainer_Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E70183182226A98700433BB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				E701831A2226A98700433BB6 /* Nimble.framework */,
 				E70183192226A98700433BB6 /* Quick.framework */,
+				8C1E77B0706694881F67F242 /* Pods_OverlayContainer.framework */,
+				84281E3E7B4853CEBFAC680F /* Pods_OverlayContainer_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,6 +191,7 @@
 				E78485C12201E66500DE64C3 /* Tests */,
 				E784855D2201E4F700DE64C3 /* Products */,
 				E70183182226A98700433BB6 /* Frameworks */,
+				2B5DCE1DC56CABEA8837E5E6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +217,7 @@
 		E78485682201E54E00DE64C3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F158E75C226364CF007910FD /* ScrollEntity.swift */,
 				E78485692201E54E00DE64C3 /* OverlayTranslationFunction.swift */,
 				E784856A2201E54E00DE64C3 /* RushingForwardTargetNotchPolicy.swift */,
 				E784856B2201E54E00DE64C3 /* OverlayScrollViewDelegate.swift */,
@@ -205,6 +240,7 @@
 				E78485722201E54E00DE64C3 /* ConcreteOverlayContainerContextTargetNotchPolicy.swift */,
 				E78485732201E54E00DE64C3 /* ConcreteOverlayTranslationParameters.swift */,
 				E78485742201E54E00DE64C3 /* OverlayScrollViewDelegateProxy.swift */,
+				F158E758226360C9007910FD /* OverlayTableNodeDelegateProxy.swift */,
 				E78485752201E54E00DE64C3 /* OverlayTranslationDriver.swift */,
 				E78485762201E54E00DE64C3 /* Extensions */,
 				E784857E2201E54E00DE64C3 /* OverlayContainerViewControllerConfiguration.swift */,
@@ -214,6 +250,7 @@
 				E78485822201E54E00DE64C3 /* PanGestureOverlayTranslationDriver.swift */,
 				E78485832201E54E00DE64C3 /* OverlayTranslationGestureRecognizer.swift */,
 				E78485842201E54E00DE64C3 /* ScrollViewOverlayTranslationDriver.swift */,
+				F158E76022636F49007910FD /* TableNodeOverlayTranslationDriver.swift */,
 				E78485852201E54E00DE64C3 /* Views */,
 			);
 			path = Internal;
@@ -230,6 +267,8 @@
 				E784857B2201E54E00DE64C3 /* OverlayContainerViewControllerDelegate+Defaults.swift */,
 				E784857C2201E54E00DE64C3 /* UIView+Subviews.swift */,
 				E784857D2201E54E00DE64C3 /* UIScrollViiew+Utils.swift */,
+				F158E75E22636AE7007910FD /* UIScrollView+ScrollEntity.swift */,
+				F158E75A226364A6007910FD /* ASTableNode+ScrollEntity.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,6 +312,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E78485642201E4F700DE64C3 /* Build configuration list for PBXNativeTarget "OverlayContainer" */;
 			buildPhases = (
+				8C98BF306260B5DDDFC795F2 /* [CP] Check Pods Manifest.lock */,
 				E78485572201E4F700DE64C3 /* Headers */,
 				E78485582201E4F700DE64C3 /* Sources */,
 				E78485592201E4F700DE64C3 /* Frameworks */,
@@ -291,6 +331,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E784864F2201EA7500DE64C3 /* Build configuration list for PBXNativeTarget "OverlayContainer_Tests" */;
 			buildPhases = (
+				2DEB64DB2EEA1BACA34C658E /* [CP] Check Pods Manifest.lock */,
 				E78486432201EA7400DE64C3 /* Sources */,
 				E78486442201EA7400DE64C3 /* Frameworks */,
 				E78486452201EA7400DE64C3 /* Resources */,
@@ -360,6 +401,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2DEB64DB2EEA1BACA34C658E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OverlayContainer_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C98BF306260B5DDDFC795F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OverlayContainer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E78485582201E4F700DE64C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -367,13 +455,17 @@
 			files = (
 				E784859C2201E54E00DE64C3 /* CGGeometry+Utils.swift in Sources */,
 				E784859E2201E54E00DE64C3 /* UIViewController+Children.swift in Sources */,
+				F158E759226360C9007910FD /* OverlayTableNodeDelegateProxy.swift in Sources */,
+				F158E76122636F49007910FD /* TableNodeOverlayTranslationDriver.swift in Sources */,
 				E78485AC2201E54E00DE64C3 /* OverlayContainerTransitionCoordinator.swift in Sources */,
+				F158E75D226364CF007910FD /* ScrollEntity.swift in Sources */,
 				E784859F2201E54E00DE64C3 /* OverlayContainerViewControllerDelegate+Defaults.swift in Sources */,
 				E78485A12201E54E00DE64C3 /* UIScrollViiew+Utils.swift in Sources */,
 				E78485A72201E54E00DE64C3 /* OverlayTranslationGestureRecognizer.swift in Sources */,
 				E78485A32201E54E00DE64C3 /* HeightContraintOverlayTranslationController.swift in Sources */,
 				E78485962201E54E00DE64C3 /* ConcreteOverlayContainerContextTransitioning.swift in Sources */,
 				E78485A92201E54E00DE64C3 /* OverlayTranslationView.swift in Sources */,
+				F158E75B226364A6007910FD /* ASTableNode+ScrollEntity.swift in Sources */,
 				E78485AA2201E54E00DE64C3 /* OverlayContainerView.swift in Sources */,
 				E78485A52201E54E00DE64C3 /* InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift in Sources */,
 				E78485AD2201E54E00DE64C3 /* OverlayTransitioningDelegate.swift in Sources */,
@@ -387,6 +479,7 @@
 				E78485A42201E54E00DE64C3 /* OverlayTranslationController.swift in Sources */,
 				E78485A02201E54E00DE64C3 /* UIView+Subviews.swift in Sources */,
 				E78485982201E54E00DE64C3 /* ConcreteOverlayTranslationParameters.swift in Sources */,
+				F158E75F22636AE7007910FD /* UIScrollView+ScrollEntity.swift in Sources */,
 				E791BAA4225F284800124D27 /* GroundView.swift in Sources */,
 				E78485A62201E54E00DE64C3 /* PanGestureOverlayTranslationDriver.swift in Sources */,
 				E784858F2201E54E00DE64C3 /* OverlayTranslationFunction.swift in Sources */,
@@ -546,11 +639,12 @@
 		};
 		E78485652201E4F700DE64C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36EDAD19737221455B6C7632 /* Pods-OverlayContainer.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = C7G63Q6LZ9;
+				DEVELOPMENT_TEAM = J5UBDLMZ89;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -572,11 +666,12 @@
 		};
 		E78485662201E4F700DE64C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91CB8A738A08DB8248F335FD /* Pods-OverlayContainer.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = C7G63Q6LZ9;
+				DEVELOPMENT_TEAM = J5UBDLMZ89;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -598,6 +693,7 @@
 		};
 		E78486502201EA7500DE64C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9548F4FD30212A00D11E579E /* Pods-OverlayContainer_Tests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7G63Q6LZ9;
@@ -620,6 +716,7 @@
 		};
 		E78486512201EA7500DE64C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AC1E83ED7562588D61C40C4 /* Pods-OverlayContainer_Tests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7G63Q6LZ9;

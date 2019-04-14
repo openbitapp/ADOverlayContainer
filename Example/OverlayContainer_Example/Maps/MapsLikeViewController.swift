@@ -29,7 +29,8 @@ class MapsLikeViewController: UIViewController {
         super.viewDidLoad()
         let overlayController = OverlayContainerViewController()
         overlayController.delegate = self
-        overlayController.viewControllers = [SearchViewController(showsCloseAction: false)]
+//        overlayController.viewControllers = [SearchViewController(showsCloseAction: false)]
+        overlayController.viewControllers = [TextureViewController()]
         addChild(overlayController, in: overlayContainerView)
         addChild(MapsViewController(), in: backgroundView)
     }
@@ -86,9 +87,13 @@ extension MapsLikeViewController: OverlayContainerViewControllerDelegate {
         return notchHeight(for: notch, availableSpace: availableSpace)
     }
 
-    func overlayContainerViewController(_ containerViewController: OverlayContainerViewController,
-                                        scrollViewDrivingOverlay overlayViewController: UIViewController) -> UIScrollView? {
-        return (overlayViewController as? SearchViewController)?.tableView
+//    func overlayContainerViewController(_ containerViewController: OverlayContainerViewController,
+//                                        scrollViewDrivingOverlay overlayViewController: UIViewController) -> UIScrollView? {
+//        return (overlayViewController as? SearchViewController)?.tableView
+//    }
+
+    func overlayContainerViewController(_ containerViewController: OverlayContainerViewController, scrollEntityDrivingOverlay overlayViewController: UIViewController) -> ScrollEntity? {
+        return (overlayViewController as? TextureViewController)?.node
     }
 
     func overlayContainerViewController(_ containerViewController: OverlayContainerViewController,
