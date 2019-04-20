@@ -57,7 +57,8 @@ extension ModalNavigationViewController: OverlayNavigationViewControllerDelegate
     func overlayNavigationViewController(_ navigationController: OverlayNavigationViewController,
                                          didShow viewController: UIViewController,
                                          animated: Bool) {
-        overlayController.drivingScrollView = (viewController as? SearchViewController)?.tableView
+//        overlayController.drivingScrollView = (viewController as? SearchViewController)?.tableView
+        overlayController.drivingScrollEntity = (viewController as? SearchViewController)?.tableView
     }
 }
 
@@ -92,5 +93,6 @@ extension ModalNavigationViewController: OverlayContainerViewControllerDelegate 
         let convertedPoint = coordinateSpace.convert(point, to: header)
         return header.bounds.contains(convertedPoint)
     }
+
 }
 

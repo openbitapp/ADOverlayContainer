@@ -63,7 +63,7 @@ public class OverlayContainerViewController: UIViewController {
     /// The scroll view managing the overlay translation.
     public weak var drivingScrollEntity: ScrollEntity? {
         didSet {
-            guard drivingScrollView !== oldValue else { return }
+            guard drivingScrollEntity !== oldValue else { return }
             guard isViewLoaded else { return }
             loadTranslationDrivers()
         }
