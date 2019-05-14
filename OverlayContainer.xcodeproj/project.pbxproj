@@ -51,6 +51,10 @@
 		E78486542201EA9400DE64C3 /* OverlayNotchHeightTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78485C42201E66500DE64C3 /* OverlayNotchHeightTest.swift */; };
 		E791BAA4225F284800124D27 /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791BAA3225F284800124D27 /* GroundView.swift */; };
 		E791BAAD225F771400124D27 /* CGFloat+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791BAAC225F771400124D27 /* CGFloat+Round.swift */; };
+		F107A7782272EC3F00CC3A28 /* ASCollectionNode+ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107A7772272EC3F00CC3A28 /* ASCollectionNode+ScrollEntity.swift */; };
+		F107A77A2272EC4C00CC3A28 /* ASSrollNode+ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107A7792272EC4C00CC3A28 /* ASSrollNode+ScrollEntity.swift */; };
+		F107A77C2272ECE400CC3A28 /* CollectionNodeOverlayTranslationDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107A77B2272ECE400CC3A28 /* CollectionNodeOverlayTranslationDriver.swift */; };
+		F107A77E2272ED1600CC3A28 /* OverlayCollectionNodeDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107A77D2272ED1500CC3A28 /* OverlayCollectionNodeDelegateProxy.swift */; };
 		F158E759226360C9007910FD /* OverlayTableNodeDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E758226360C9007910FD /* OverlayTableNodeDelegateProxy.swift */; };
 		F158E75B226364A6007910FD /* ASTableNode+ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E75A226364A6007910FD /* ASTableNode+ScrollEntity.swift */; };
 		F158E75D226364CF007910FD /* ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E75C226364CF007910FD /* ScrollEntity.swift */; };
@@ -132,6 +136,10 @@
 		E78486472201EA7400DE64C3 /* OverlayContainer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OverlayContainer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E791BAA3225F284800124D27 /* GroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundView.swift; sourceTree = "<group>"; };
 		E791BAAC225F771400124D27 /* CGFloat+Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Round.swift"; sourceTree = "<group>"; };
+		F107A7772272EC3F00CC3A28 /* ASCollectionNode+ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASCollectionNode+ScrollEntity.swift"; sourceTree = "<group>"; };
+		F107A7792272EC4C00CC3A28 /* ASSrollNode+ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASSrollNode+ScrollEntity.swift"; sourceTree = "<group>"; };
+		F107A77B2272ECE400CC3A28 /* CollectionNodeOverlayTranslationDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNodeOverlayTranslationDriver.swift; sourceTree = "<group>"; };
+		F107A77D2272ED1500CC3A28 /* OverlayCollectionNodeDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCollectionNodeDelegateProxy.swift; sourceTree = "<group>"; };
 		F158E758226360C9007910FD /* OverlayTableNodeDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTableNodeDelegateProxy.swift; sourceTree = "<group>"; };
 		F158E75A226364A6007910FD /* ASTableNode+ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASTableNode+ScrollEntity.swift"; sourceTree = "<group>"; };
 		F158E75C226364CF007910FD /* ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollEntity.swift; sourceTree = "<group>"; };
@@ -236,13 +244,14 @@
 		E78485702201E54E00DE64C3 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				E78485762201E54E00DE64C3 /* Extensions */,
 				E78485712201E54E00DE64C3 /* ConcreteOverlayContainerContextTransitioning.swift */,
 				E78485722201E54E00DE64C3 /* ConcreteOverlayContainerContextTargetNotchPolicy.swift */,
 				E78485732201E54E00DE64C3 /* ConcreteOverlayTranslationParameters.swift */,
 				E78485742201E54E00DE64C3 /* OverlayScrollViewDelegateProxy.swift */,
 				F158E758226360C9007910FD /* OverlayTableNodeDelegateProxy.swift */,
+				F107A77D2272ED1500CC3A28 /* OverlayCollectionNodeDelegateProxy.swift */,
 				E78485752201E54E00DE64C3 /* OverlayTranslationDriver.swift */,
-				E78485762201E54E00DE64C3 /* Extensions */,
 				E784857E2201E54E00DE64C3 /* OverlayContainerViewControllerConfiguration.swift */,
 				E784857F2201E54E00DE64C3 /* HeightContraintOverlayTranslationController.swift */,
 				E78485802201E54E00DE64C3 /* OverlayTranslationController.swift */,
@@ -251,6 +260,7 @@
 				E78485832201E54E00DE64C3 /* OverlayTranslationGestureRecognizer.swift */,
 				E78485842201E54E00DE64C3 /* ScrollViewOverlayTranslationDriver.swift */,
 				F158E76022636F49007910FD /* TableNodeOverlayTranslationDriver.swift */,
+				F107A77B2272ECE400CC3A28 /* CollectionNodeOverlayTranslationDriver.swift */,
 				E78485852201E54E00DE64C3 /* Views */,
 			);
 			path = Internal;
@@ -269,6 +279,8 @@
 				E784857D2201E54E00DE64C3 /* UIScrollViiew+Utils.swift */,
 				F158E75E22636AE7007910FD /* UIScrollView+ScrollEntity.swift */,
 				F158E75A226364A6007910FD /* ASTableNode+ScrollEntity.swift */,
+				F107A7772272EC3F00CC3A28 /* ASCollectionNode+ScrollEntity.swift */,
+				F107A7792272EC4C00CC3A28 /* ASSrollNode+ScrollEntity.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -467,7 +479,11 @@
 				E78485A92201E54E00DE64C3 /* OverlayTranslationView.swift in Sources */,
 				F158E75B226364A6007910FD /* ASTableNode+ScrollEntity.swift in Sources */,
 				E78485AA2201E54E00DE64C3 /* OverlayContainerView.swift in Sources */,
+				F107A77A2272EC4C00CC3A28 /* ASSrollNode+ScrollEntity.swift in Sources */,
 				E78485A52201E54E00DE64C3 /* InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift in Sources */,
+				F107A7782272EC3F00CC3A28 /* ASCollectionNode+ScrollEntity.swift in Sources */,
+				F107A77E2272ED1600CC3A28 /* OverlayCollectionNodeDelegateProxy.swift in Sources */,
+				F107A77C2272ECE400CC3A28 /* CollectionNodeOverlayTranslationDriver.swift in Sources */,
 				E78485AD2201E54E00DE64C3 /* OverlayTransitioningDelegate.swift in Sources */,
 				E791BAAD225F771400124D27 /* CGFloat+Round.swift in Sources */,
 				E78485A22201E54E00DE64C3 /* OverlayContainerViewControllerConfiguration.swift in Sources */,

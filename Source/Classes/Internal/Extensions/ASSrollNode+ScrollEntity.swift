@@ -1,8 +1,8 @@
 //
-//  ASTableNode+ScrollEntity.swift
+//  ASSrollNode+ScrollEntity.swift
 //  OverlayContainer
 //
-//  Created by Roberto Casula on 14/04/2019.
+//  Created by Roberto Casula on 26/04/2019.
 //  Copyright © 2019 Gaétan Zanella. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ import Foundation
 
 import AsyncDisplayKit
 
-extension ASTableNode: ScrollEntity {
+extension ASScrollNode: ScrollEntity {
     public var gestureRecognizers: [UIGestureRecognizer]? {
         return self.view.gestureRecognizers
     }
@@ -23,14 +23,15 @@ extension ASTableNode: ScrollEntity {
 
     public var isContentOriginInBounds: Bool {
 
-        return contentOffset.y <= -contentInset.top
+        return view.contentOffset.y <= -view.contentInset.top
     }
 
     public func scrollToTop() {
-        contentOffset.y = -contentInset.top
+        view.contentOffset.y = -view.contentInset.top
     }
 
 
 }
 
 #endif
+

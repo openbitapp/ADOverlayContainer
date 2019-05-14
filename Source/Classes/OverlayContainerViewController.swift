@@ -275,6 +275,15 @@ public class OverlayContainerViewController: UIViewController {
                 )
                 drivers.append(driver)
                 break
+            case is ASCollectionNode:
+                guard let collectionNode = scrollEntity as? ASCollectionNode
+                    else { break }
+                let driver = CollectionNodeOverlayTranslationDriver(
+                    translationController: translationController,
+                    collectionNode: collectionNode
+                )
+                drivers.append(driver)
+                break
             #endif
             default:
                 break

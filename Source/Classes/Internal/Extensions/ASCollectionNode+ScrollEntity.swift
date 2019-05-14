@@ -1,10 +1,12 @@
 //
-//  ASTableNode+ScrollEntity.swift
+//  ASCollectionNode+ScrollEntity.swift
 //  OverlayContainer
 //
-//  Created by Roberto Casula on 14/04/2019.
+//  Created by Roberto Casula on 26/04/2019.
 //  Copyright © 2019 Gaétan Zanella. All rights reserved.
 //
+
+import Foundation
 
 import Foundation
 
@@ -12,7 +14,7 @@ import Foundation
 
 import AsyncDisplayKit
 
-extension ASTableNode: ScrollEntity {
+extension ASCollectionNode: ScrollEntity {
     public var gestureRecognizers: [UIGestureRecognizer]? {
         return self.view.gestureRecognizers
     }
