@@ -31,7 +31,7 @@
 		E784859F2201E54E00DE64C3 /* OverlayContainerViewControllerDelegate+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784857B2201E54E00DE64C3 /* OverlayContainerViewControllerDelegate+Defaults.swift */; };
 		E78485A02201E54E00DE64C3 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784857C2201E54E00DE64C3 /* UIView+Subviews.swift */; };
 		E78485A12201E54E00DE64C3 /* UIScrollViiew+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784857D2201E54E00DE64C3 /* UIScrollViiew+Utils.swift */; };
-		E78485A22201E54E00DE64C3 /* OverlayContainerViewControllerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784857E2201E54E00DE64C3 /* OverlayContainerViewControllerConfiguration.swift */; };
+		E78485A22201E54E00DE64C3 /* OverlayContainerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784857E2201E54E00DE64C3 /* OverlayContainerConfiguration.swift */; };
 		E78485A32201E54E00DE64C3 /* HeightContraintOverlayTranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784857F2201E54E00DE64C3 /* HeightContraintOverlayTranslationController.swift */; };
 		E78485A42201E54E00DE64C3 /* OverlayTranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78485802201E54E00DE64C3 /* OverlayTranslationController.swift */; };
 		E78485A52201E54E00DE64C3 /* InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78485812201E54E00DE64C3 /* InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift */; };
@@ -60,6 +60,9 @@
 		F158E75D226364CF007910FD /* ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E75C226364CF007910FD /* ScrollEntity.swift */; };
 		F158E75F22636AE7007910FD /* UIScrollView+ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E75E22636AE7007910FD /* UIScrollView+ScrollEntity.swift */; };
 		F158E76122636F49007910FD /* TableNodeOverlayTranslationDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E76022636F49007910FD /* TableNodeOverlayTranslationDriver.swift */; };
+		E7B22ABE22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B22ABD22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift */; };
+		E7C6C4ED22AEB4E200808C01 /* OverlayTranslationContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6C4EC22AEB4E200808C01 /* OverlayTranslationContainerView.swift */; };
+		E7FD265422A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FD265322A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +117,7 @@
 		E784857B2201E54E00DE64C3 /* OverlayContainerViewControllerDelegate+Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OverlayContainerViewControllerDelegate+Defaults.swift"; sourceTree = "<group>"; };
 		E784857C2201E54E00DE64C3 /* UIView+Subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		E784857D2201E54E00DE64C3 /* UIScrollViiew+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollViiew+Utils.swift"; sourceTree = "<group>"; };
-		E784857E2201E54E00DE64C3 /* OverlayContainerViewControllerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayContainerViewControllerConfiguration.swift; sourceTree = "<group>"; };
+		E784857E2201E54E00DE64C3 /* OverlayContainerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayContainerConfiguration.swift; sourceTree = "<group>"; };
 		E784857F2201E54E00DE64C3 /* HeightContraintOverlayTranslationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightContraintOverlayTranslationController.swift; sourceTree = "<group>"; };
 		E78485802201E54E00DE64C3 /* OverlayTranslationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayTranslationController.swift; sourceTree = "<group>"; };
 		E78485812201E54E00DE64C3 /* InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift; sourceTree = "<group>"; };
@@ -145,6 +148,9 @@
 		F158E75C226364CF007910FD /* ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollEntity.swift; sourceTree = "<group>"; };
 		F158E75E22636AE7007910FD /* UIScrollView+ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ScrollEntity.swift"; sourceTree = "<group>"; };
 		F158E76022636F49007910FD /* TableNodeOverlayTranslationDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableNodeOverlayTranslationDriver.swift; sourceTree = "<group>"; };
+		E7B22ABD22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayContainerConfigurationImplementation.swift; sourceTree = "<group>"; };
+		E7C6C4EC22AEB4E200808C01 /* OverlayTranslationContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTranslationContainerView.swift; sourceTree = "<group>"; };
+		E7FD265322A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggingOverlayContainerTransitionCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +250,7 @@
 		E78485702201E54E00DE64C3 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				E7B22ABC22A182E6009392EC /* Configuration */,
 				E78485762201E54E00DE64C3 /* Extensions */,
 				E78485712201E54E00DE64C3 /* ConcreteOverlayContainerContextTransitioning.swift */,
 				E78485722201E54E00DE64C3 /* ConcreteOverlayContainerContextTargetNotchPolicy.swift */,
@@ -256,6 +263,7 @@
 				E784857F2201E54E00DE64C3 /* HeightContraintOverlayTranslationController.swift */,
 				E78485802201E54E00DE64C3 /* OverlayTranslationController.swift */,
 				E78485812201E54E00DE64C3 /* InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift */,
+				E7FD265322A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift */,
 				E78485822201E54E00DE64C3 /* PanGestureOverlayTranslationDriver.swift */,
 				E78485832201E54E00DE64C3 /* OverlayTranslationGestureRecognizer.swift */,
 				E78485842201E54E00DE64C3 /* ScrollViewOverlayTranslationDriver.swift */,
@@ -289,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				E78485862201E54E00DE64C3 /* OverlayTranslationView.swift */,
+				E7C6C4EC22AEB4E200808C01 /* OverlayTranslationContainerView.swift */,
 				E78485872201E54E00DE64C3 /* OverlayContainerView.swift */,
 				E791BAA3225F284800124D27 /* GroundView.swift */,
 			);
@@ -304,6 +313,15 @@
 				E78485C52201E66500DE64C3 /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		E7B22ABC22A182E6009392EC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				E7B22ABD22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift */,
+				E784857E2201E54E00DE64C3 /* OverlayContainerConfiguration.swift */,
+			);
+			name = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,6 +489,7 @@
 				F158E76122636F49007910FD /* TableNodeOverlayTranslationDriver.swift in Sources */,
 				E78485AC2201E54E00DE64C3 /* OverlayContainerTransitionCoordinator.swift in Sources */,
 				F158E75D226364CF007910FD /* ScrollEntity.swift in Sources */,
+				E7FD265422A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift in Sources */,
 				E784859F2201E54E00DE64C3 /* OverlayContainerViewControllerDelegate+Defaults.swift in Sources */,
 				E78485A12201E54E00DE64C3 /* UIScrollViiew+Utils.swift in Sources */,
 				E78485A72201E54E00DE64C3 /* OverlayTranslationGestureRecognizer.swift in Sources */,
@@ -486,7 +505,7 @@
 				F107A77C2272ECE400CC3A28 /* CollectionNodeOverlayTranslationDriver.swift in Sources */,
 				E78485AD2201E54E00DE64C3 /* OverlayTransitioningDelegate.swift in Sources */,
 				E791BAAD225F771400124D27 /* CGFloat+Round.swift in Sources */,
-				E78485A22201E54E00DE64C3 /* OverlayContainerViewControllerConfiguration.swift in Sources */,
+				E78485A22201E54E00DE64C3 /* OverlayContainerConfiguration.swift in Sources */,
 				E78485972201E54E00DE64C3 /* ConcreteOverlayContainerContextTargetNotchPolicy.swift in Sources */,
 				E78485A82201E54E00DE64C3 /* ScrollViewOverlayTranslationDriver.swift in Sources */,
 				E784859D2201E54E00DE64C3 /* UIView+Constraints.swift in Sources */,
@@ -499,8 +518,10 @@
 				E791BAA4225F284800124D27 /* GroundView.swift in Sources */,
 				E78485A62201E54E00DE64C3 /* PanGestureOverlayTranslationDriver.swift in Sources */,
 				E784858F2201E54E00DE64C3 /* OverlayTranslationFunction.swift in Sources */,
+				E7B22ABE22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift in Sources */,
 				E78485992201E54E00DE64C3 /* OverlayScrollViewDelegateProxy.swift in Sources */,
 				E784859B2201E54E00DE64C3 /* UIPanGesture+Utils.swift in Sources */,
+				E7C6C4ED22AEB4E200808C01 /* OverlayTranslationContainerView.swift in Sources */,
 				E78485942201E54E00DE64C3 /* PassThroughView.swift in Sources */,
 				E78485932201E54E00DE64C3 /* SpringOverlayTranslationAnimationController.swift in Sources */,
 				E784859A2201E54E00DE64C3 /* OverlayTranslationDriver.swift in Sources */,

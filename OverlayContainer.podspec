@@ -8,11 +8,10 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OverlayContainer'
-  s.version          = '2.1.3'
+  s.version          = '3.0.0'
   s.summary          = 'OverlayContainer is a UI library which makes it easier to develop overlay based interfaces.'
 
   s.swift_version    = '4.2'
-  s.swift_versions = ['4.2']
 
   s.description      = <<-DESC
   OverlayContainer is a UI library written in Swift. It makes it easier to develop overlay based interfaces, such as the one presented in the Apple Maps, Stocks or Shortcuts apps.
