@@ -51,6 +51,9 @@
 		E78486542201EA9400DE64C3 /* OverlayNotchHeightTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78485C42201E66500DE64C3 /* OverlayNotchHeightTest.swift */; };
 		E791BAA4225F284800124D27 /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791BAA3225F284800124D27 /* GroundView.swift */; };
 		E791BAAD225F771400124D27 /* CGFloat+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791BAAC225F771400124D27 /* CGFloat+Round.swift */; };
+		E7B22ABE22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B22ABD22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift */; };
+		E7C6C4ED22AEB4E200808C01 /* OverlayTranslationContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6C4EC22AEB4E200808C01 /* OverlayTranslationContainerView.swift */; };
+		E7FD265422A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FD265322A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift */; };
 		F107A7782272EC3F00CC3A28 /* ASCollectionNode+ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107A7772272EC3F00CC3A28 /* ASCollectionNode+ScrollEntity.swift */; };
 		F107A77A2272EC4C00CC3A28 /* ASSrollNode+ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107A7792272EC4C00CC3A28 /* ASSrollNode+ScrollEntity.swift */; };
 		F107A77C2272ECE400CC3A28 /* CollectionNodeOverlayTranslationDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107A77B2272ECE400CC3A28 /* CollectionNodeOverlayTranslationDriver.swift */; };
@@ -60,9 +63,6 @@
 		F158E75D226364CF007910FD /* ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E75C226364CF007910FD /* ScrollEntity.swift */; };
 		F158E75F22636AE7007910FD /* UIScrollView+ScrollEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E75E22636AE7007910FD /* UIScrollView+ScrollEntity.swift */; };
 		F158E76122636F49007910FD /* TableNodeOverlayTranslationDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158E76022636F49007910FD /* TableNodeOverlayTranslationDriver.swift */; };
-		E7B22ABE22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B22ABD22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift */; };
-		E7C6C4ED22AEB4E200808C01 /* OverlayTranslationContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6C4EC22AEB4E200808C01 /* OverlayTranslationContainerView.swift */; };
-		E7FD265422A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FD265322A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +139,9 @@
 		E78486472201EA7400DE64C3 /* OverlayContainer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OverlayContainer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E791BAA3225F284800124D27 /* GroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundView.swift; sourceTree = "<group>"; };
 		E791BAAC225F771400124D27 /* CGFloat+Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Round.swift"; sourceTree = "<group>"; };
+		E7B22ABD22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayContainerConfigurationImplementation.swift; sourceTree = "<group>"; };
+		E7C6C4EC22AEB4E200808C01 /* OverlayTranslationContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTranslationContainerView.swift; sourceTree = "<group>"; };
+		E7FD265322A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggingOverlayContainerTransitionCoordinator.swift; sourceTree = "<group>"; };
 		F107A7772272EC3F00CC3A28 /* ASCollectionNode+ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASCollectionNode+ScrollEntity.swift"; sourceTree = "<group>"; };
 		F107A7792272EC4C00CC3A28 /* ASSrollNode+ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASSrollNode+ScrollEntity.swift"; sourceTree = "<group>"; };
 		F107A77B2272ECE400CC3A28 /* CollectionNodeOverlayTranslationDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNodeOverlayTranslationDriver.swift; sourceTree = "<group>"; };
@@ -148,9 +151,6 @@
 		F158E75C226364CF007910FD /* ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollEntity.swift; sourceTree = "<group>"; };
 		F158E75E22636AE7007910FD /* UIScrollView+ScrollEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ScrollEntity.swift"; sourceTree = "<group>"; };
 		F158E76022636F49007910FD /* TableNodeOverlayTranslationDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableNodeOverlayTranslationDriver.swift; sourceTree = "<group>"; };
-		E7B22ABD22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayContainerConfigurationImplementation.swift; sourceTree = "<group>"; };
-		E7C6C4EC22AEB4E200808C01 /* OverlayTranslationContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTranslationContainerView.swift; sourceTree = "<group>"; };
-		E7FD265322A801A100CC4A8F /* DraggingOverlayContainerTransitionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggingOverlayContainerTransitionCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,7 +259,7 @@
 				F158E758226360C9007910FD /* OverlayTableNodeDelegateProxy.swift */,
 				F107A77D2272ED1500CC3A28 /* OverlayCollectionNodeDelegateProxy.swift */,
 				E78485752201E54E00DE64C3 /* OverlayTranslationDriver.swift */,
-				E784857E2201E54E00DE64C3 /* OverlayContainerViewControllerConfiguration.swift */,
+				E784857E2201E54E00DE64C3 /* OverlayContainerConfiguration.swift */,
 				E784857F2201E54E00DE64C3 /* HeightContraintOverlayTranslationController.swift */,
 				E78485802201E54E00DE64C3 /* OverlayTranslationController.swift */,
 				E78485812201E54E00DE64C3 /* InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift */,
@@ -319,7 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				E7B22ABD22A182F4009392EC /* OverlayContainerConfigurationImplementation.swift */,
-				E784857E2201E54E00DE64C3 /* OverlayContainerConfiguration.swift */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -696,7 +695,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaetanzanella.OverlayContainer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -723,7 +722,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaetanzanella.OverlayContainer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -733,7 +732,7 @@
 			baseConfigurationReference = 9548F4FD30212A00D11E579E /* Pods-OverlayContainer_Tests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C7G63Q6LZ9;
+				DEVELOPMENT_TEAM = J5UBDLMZ89;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -746,7 +745,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gaetanzanella.OverlayContainer-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -756,7 +755,7 @@
 			baseConfigurationReference = 1AC1E83ED7562588D61C40C4 /* Pods-OverlayContainer_Tests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C7G63Q6LZ9;
+				DEVELOPMENT_TEAM = J5UBDLMZ89;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -769,7 +768,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gaetanzanella.OverlayContainer-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

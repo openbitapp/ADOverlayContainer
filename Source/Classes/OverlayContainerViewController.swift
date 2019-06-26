@@ -256,15 +256,6 @@ public class OverlayContainerViewController: UIViewController {
             panGestureRecognizer: overlayPanGesture
         )
         drivers.append(panGestureDriver)
-//        let scrollView = drivingScrollView ?? configuration.scrollView(drivingOverlay: overlayController)
-//        if let scrollView = scrollView {
-//            overlayPanGesture.drivingScrollView = scrollView
-//            let driver = ScrollViewOverlayTranslationDriver(
-//                translationController: translationController,
-//                scrollView: scrollView
-//            )
-//            drivers.append(driver)
-//        }
 
         let scrollEntity = drivingScrollEntity ?? configuration.scrollEntity(drivingOverlay: overlayController)
         if let scrollEntity = scrollEntity {

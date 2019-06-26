@@ -1,8 +1,8 @@
 PODS:
-  - OverlayContainer (2.1.1):
-    - OverlayContainer/Core (= 2.1.1)
-  - OverlayContainer/Core (2.1.1)
-  - OverlayContainer/Texture (2.1.1):
+  - OverlayContainer (3.0.0):
+    - OverlayContainer/Core (= 3.0.0)
+  - OverlayContainer/Core (3.0.0)
+  - OverlayContainer/Texture (3.0.0):
     - Texture/Core
   - Texture/Core (2.8)
 
@@ -19,9 +19,9 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  OverlayContainer: 5bf3b258c8a3a7f5b00f62e110bd9751e3abbe62
+  OverlayContainer: 5e752ac7394555b32845f90aa0805f4fd3670660
   Texture: fc6e0157201f3a6e503d364c147b1872e365cef4
 
 PODFILE CHECKSUM: 05bae2c1207163f89d983c243a241303b882e64b
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.7.2
