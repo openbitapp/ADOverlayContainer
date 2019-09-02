@@ -1,10 +1,10 @@
 PODS:
-  - OverlayContainer (3.0.0):
-    - OverlayContainer/Core (= 3.0.0)
-  - OverlayContainer/Core (3.0.0)
-  - OverlayContainer/Texture (3.0.0):
+  - OverlayContainer (3.1.0):
+    - OverlayContainer/Core (= 3.1.0)
+  - OverlayContainer/Core (3.1.0)
+  - OverlayContainer/Texture (3.1.0):
     - Texture/Core
-  - Texture/Core (2.8)
+  - Texture/Core (2.8.1)
 
 DEPENDENCIES:
   - OverlayContainer (from `..`)
@@ -19,9 +19,9 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  OverlayContainer: 5e752ac7394555b32845f90aa0805f4fd3670660
-  Texture: fc6e0157201f3a6e503d364c147b1872e365cef4
+  OverlayContainer: 637d55d1565a4b9980f084382e9f8eff14bdf58e
+  Texture: 8ecf6984065a1e54f06bf97b349ecca28582acd7
 
 PODFILE CHECKSUM: 05bae2c1207163f89d983c243a241303b882e64b
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.7.5
