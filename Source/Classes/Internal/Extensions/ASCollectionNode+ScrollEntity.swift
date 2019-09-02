@@ -23,16 +23,35 @@ extension ASCollectionNode: ScrollEntity {
         return self.view.panGestureRecognizer.yDirection == .up
     }
 
-    public var isContentOriginInBounds: Bool {
+//    public var isContentOriginInBounds: Bool {
+//
+//        return contentOffset.y <= -contentInset.top
+//    }
+//
+//    public func scrollToTop() {
+//        contentOffset.y = -contentInset.top
+//    }
 
-        return contentOffset.y <= -contentInset.top
+    public var isContentOriginInBounds: Bool {
+        return contentOffset.y <= -oc_adjustedContentInset.top
     }
 
     public func scrollToTop() {
-        contentOffset.y = -contentInset.top
+        contentOffset.y = -oc_adjustedContentInset.top
     }
+}
 
+extension ASCollectionNode {
 
+    var oc_adjustedContentInset: UIEdgeInsets {
+
+        if #available(iOS 11.0, *) {
+            return self.view.adjustedContentInset
+        } else {
+            // Fallback on earlier versions
+            return self.contentInset
+        }
+    }
 }
 
 #endif
