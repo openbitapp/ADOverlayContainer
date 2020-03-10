@@ -12,7 +12,7 @@
   <a href="https://developer.apple.com/swift"><img alt="Swift5" src="https://img.shields.io/badge/language-Swift%205.0-orange.svg"/></a>
   <a href="https://cocoapods.org/pods/OverlayContainer"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/OverlayContainer.svg?style=flat"/></a>
   <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
-  <a href="https://travis-ci.org/applidium/ADOverlayContainer"><img alt="Build Status" src="https://api.travis-ci.org/applidium/ADOverlayContainer.svg?branch=master"/></a>
+  <a href="https://travis-ci.org/applidium/ADOverlayContainer"><img alt="Build Status" src="https://api.travis-ci.org/applidium/OverlayContainer.svg?branch=master"/></a>
   <a href="https://github.com/applidium/ADOverlayContainer/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/cocoapods/l/OverlayContainer.svg?style=flat"/></a>
 </p>
 
@@ -31,7 +31,7 @@ There are alternatives like:
 - It perfectly mimics the overlay presented in the Siri Shotcuts app. See [this article](https://gaetanzanella.github.io//2018/replicate-apple-maps-overlay/) for details.
 - It provides more features:
 
-- [x] Unlimited notches 
+- [x] Unlimited notches
 - [x] Notches modifiable at runtime
 - [x] Adaptive to any custom layouts
 - [x] Rubber band effect
@@ -52,8 +52,9 @@ See the provided examples for help or feel free to ask directly.
 - [Installation](#installation)
   - [CocoaPods](#cocoapods)
   - [Carthage](#carthage)
+  - [Swift Package Manager](#swift-package-manager)
 - [Usage](#usage)
-  - [Setup](#mininim-setup)
+  - [Setup](#setup)
   - [Overlay style](#overlay-style)
   - [Scroll view support](#scroll-view-support)
   - [Pan gesture support](#pan-gesture-support)
@@ -61,8 +62,8 @@ See the provided examples for help or feel free to ask directly.
   - [Examples](#examples)
 - [Advanced Usage](#advanced-usage)
   - [Multiple overlays](#multiple-overlays)
-  - [Showing & Hiding the overlay](#show-&-hide-the-overlay)
-  - [Backdrop view](#backdrop-usage)
+  - [Showing & Hiding the overlay](#showing--hiding-the-overlay)
+  - [Backdrop view](#backdrop-view)
   - [Safe Area](#safe-area)
   - [Custom Translation](#custom-translation)
   - [Custom Translation Animations](#custom-translation-animations)
@@ -93,6 +94,20 @@ Add the following to your Cartfile:
 github "https://github.com/applidium/OverlayContainer"
 ```
 
+### Swift Package Manager
+
+OverlayContainer can be installed as a Swift Package with Xcode 11 or higher. To install it, add a package using Xcode or a dependency to your Package.swift file:
+
+```swift
+.package(url: "https://github.com/applidium/OverlayContainer.git", from: "3.2.0")
+```
+
+Or to track the latest version:
+
+```swift
+.package(url: "https://github.com/applidium/OverlayContainer.git", .branch("master"))
+```
+
 ## Usage
 
 ### Setup
@@ -117,7 +132,7 @@ containerController.viewControllers = [
 window?.rootViewController = containerController
 ```
 
-Specifing only one view controller is absolutely valid. For instance, in [MapsLikeViewController](https://github.com/applidium/ADOverlayContainer/blob/master/Example/OverlayContainer_Example/Maps/MapsLikeViewController.swift) the overlay only covers partially its content.
+Specifing only one view controller is absolutely valid. For instance, in [MapsLikeViewController](https://github.com/applidium/OverlayContainer/blob/master/Example/OverlayContainer_Example/Maps/MapsLikeViewController.swift) the overlay only covers partially its content.
 
 The overlay container view controller needs at least one notch. Implement `OverlayContainerViewControllerDelegate` to specify the number of notches wished:
 
@@ -204,7 +219,7 @@ containerController.drivingScrollView = myScrollView
 
 ### Pan gesture support
 
-The container view controller detects pan gestures on its own view. 
+The container view controller detects pan gestures on its own view.
 Use the dedicated delegate method to check that the specified starting pan gesture location corresponds to a grabbable view in your custom overlay.
 
 ```swift
@@ -222,7 +237,9 @@ func overlayContainerViewController(_ containerViewController: OverlayContainerV
 
 ### Tracking the overlay
 
-You can track the overlay motions using the dedicated delegate methods.
+You can track the overlay motions using the dedicated delegate methods:
+
+- Translation Start
 
 Tells the delegate when the user is about to start dragging the overlay view controller.
 
@@ -230,6 +247,9 @@ Tells the delegate when the user is about to start dragging the overlay view con
 func overlayContainerViewController(_ containerViewController: OverlayContainerViewController,
                                     willStartDraggingOverlay overlayViewController: UIViewController)
 ```
+
+- Translation End
+
 Tells the delegate when the user finishs dragging the overlay view controller with the specified velocity.
 
 ```swift
@@ -237,6 +257,8 @@ func overlayContainerViewController(_ containerViewController: OverlayContainerV
                                     willEndDraggingOverlay overlayViewController: UIViewController,
                                     atVelocity velocity: CGPoint)
 ```
+
+- Translation In Progress
 
 Tells the delegate when the container is about to move the overlay view controller to the specified notch.
 
@@ -267,7 +289,7 @@ func overlayContainerViewController(_ containerViewController: OverlayContainerV
                                     transitionCoordinator: OverlayContainerTransitionCoordinator)
 ```
 
-The `transition coordinator` provides information about the animation that is about to start:
+The `transition coordinator` provides information about the translation that is about to start:
 
 ```swift
 /// A Boolean value indicating whether the transition is explicitly animated.
@@ -290,6 +312,13 @@ var reachableIndexes: [Int] { get }
 
 /// Returns the height of the specified notch.
 func height(forNotchAt index: Int) -> CGFloat
+```
+and allows you to add animations alongside it:
+
+```swift
+transitionCoordinator.animate(alongsideTransition: { context in
+    // ...
+}, completion: nil)
 ```
 
 ### Examples
@@ -380,7 +409,7 @@ Make sure to use the `rigid` overlay style if the content can not be flattened.
 
 ### Backdrop view
 
-Coordinate the overlay movements to the aspect of a view using the dedicated delegate methods. See the [backdrop view example](https://github.com/applidium/ADOverlayContainer/blob/master/Example/OverlayContainer/BackdropExampleViewController.swift).
+Coordinate the overlay movements to the aspect of a view using the dedicated delegate methods. See the [backdrop view example](https://github.com/applidium/OverlayContainer/blob/master/Example/OverlayContainer_Example/Backdrop/BackdropExampleViewController.swift).
 
 ![backdrop](https://github.com/applidium/ADOverlayContainer/blob/master/Assets/backdropView.gif)
 
@@ -437,7 +466,7 @@ func overlayContainerViewController(_ containerViewController: OverlayContainerV
 
 Adopt `OverlayTranslationTargetNotchPolicy` & `OverlayAnimatedTransitioning` protocols to define where the overlay should go once the user's touch is released and how to animate the translation.
 
-By default, the overlay container uses a `SpringOverlayTranslationAnimationController` that mimics the behavior of a spring. 
+By default, the overlay container uses a `SpringOverlayTranslationAnimationController` that mimics the behavior of a spring.
 The associated target notch policy `RushingForwardTargetNotchPolicy` will always try to go forward if the user's finger reachs a certain velocity. It might also decide to skip some notches if the user goes too fast.
 
 Tweak the provided implementations or implement our own objects to modify the overlay translation behavior.
@@ -467,12 +496,12 @@ You can reload all the data that is used to construct the notches using the dedi
 func invalidateNotchHeights()
 ```
 
-This method does not reload the notch heights immediately. It only clears the current container's state. Because the number of notches may change, the container will use its target notch policy to determine where to go. 
+This method does not reload the notch heights immediately. It only clears the current container's state. Because the number of notches may change, the container will use its target notch policy to determine where to go.
 Call `moveOverlay(toNotchAt:animated:)` to override this behavior.
 
 ## Author
 
-gaetanzanella, gaetan.zanella@fabernovel.com
+[@gaetanzanella](https://twitter.com/gaetanzanella), gaetan.zanella@fabernovel.com
 
 ## License
 

@@ -1,3 +1,16 @@
+## 3.3.0 (09 March 2020)
+
+- `OverlayContainer` class is now open
+- `PassThroughView` class is now open
+
+## 3.2.1 (10 January 2020)
+
+- The status bar style derives from the overlay controller
+
+## 3.2.0 (28 October 2019)
+
+- Swift Package Manager support
+
 ## 3.1.0 (28 August 2019)
 
 - Support Swift 4.2 & 5
@@ -12,7 +25,7 @@ Furthermore the layout will not break if the container move the overlay or inval
 to be lifted above the bottom of the screen when an animated transition occurs.
 - New overlay style `expandableHeight`
 - New delegate tracking API: `willTranslateOverlay`, `didMoveOverlay`, `willMoveOverlay`, `willEndDraggingOverlay`, `willStartDraggingOverlay`
-- `invalidateNotchHeight` use the target notch policy to determine where to go by default
+- `invalidateNotchHeight` uses the target notch policy to determine where to go by default
 
 ## 2.0.2 (3 May 2019)
 
